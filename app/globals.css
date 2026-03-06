@@ -39,35 +39,20 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-
-    to {
-      height: var(--radix-accordion-content-height);
-    }
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
   }
 
   @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-
-    to {
-      height: 0;
-    }
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
   }
 
   --animate-marquee: marquee 40s linear infinite;
 
   @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(-100%);
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
   }
 }
 
@@ -88,12 +73,8 @@
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -103,71 +84,71 @@
   }
 }
 
+/* ═══════════════════════════════════════════════════
+   DARK 3D GLASS THEME
+   ═══════════════════════════════════════════════════ */
+
 :root {
-  /* Stone 50 */
-  --background: 60 4.8% 95.9%;
-  /* Slate 900 */
-  --foreground: 222.2 47.4% 11.2%;
+  /* Deep dark cosmic background (Default) */
+  --background: 220 20% 6%;
+  --foreground: 0 0% 95%;
 
-  /* Amber 500 */
-  --primary: 38 92% 50%;
-  --primary-foreground: 210 40% 98%;
+  --primary: 30 95% 55%;
+  --primary-foreground: 0 0% 100%;
 
-  /* Stone 100 */
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 47.4% 11.2%;
+  --card: 220 15% 10%;
+  --card-foreground: 0 0% 95%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 47.4% 11.2%;
+  --popover: 220 15% 10%;
+  --popover-foreground: 0 0% 95%;
 
-  /* Stone 200 */
-  --secondary: 60 4.8% 95.9%;
-  --secondary-foreground: 24 9.8% 10%;
+  --secondary: 220 12% 14%;
+  --secondary-foreground: 0 0% 90%;
 
-  --muted: 60 4.8% 95.9%;
-  --muted-foreground: 25 5.3% 44.7%;
+  --muted: 220 12% 14%;
+  --muted-foreground: 0 0% 65%;
 
-  --accent: 60 4.8% 95.9%;
-  --accent-foreground: 24 9.8% 10%;
+  --accent: 220 12% 16%;
+  --accent-foreground: 0 0% 95%;
 
   --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 60 9.1% 97.8%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 20 5.9% 90%;
-  --input: 20 5.9% 90%;
-  --ring: 38 92% 50%;
+  --border: 220 10% 18%;
+  --input: 220 10% 18%;
+  --ring: 30 95% 55%;
 
-  --radius: 0.75rem;
+  --radius: 1rem;
 }
 
-.dark {
-  --background: 20 14.3% 4.1%;
-  --foreground: 60 9.1% 97.8%;
-
-  --card: 20 14.3% 4.1%;
-  --card-foreground: 60 9.1% 97.8%;
-
-  --popover: 20 14.3% 4.1%;
-  --popover-foreground: 60 9.1% 97.8%;
-
-  --primary: 38 92% 50%;
-  --primary-foreground: 60 9.1% 97.8%;
-
-  --secondary: 12 6.5% 15.1%;
-  --secondary-foreground: 60 9.1% 97.8%;
-
-  --muted: 12 6.5% 15.1%;
-  --muted-foreground: 24 5.4% 63.9%;
-
-  --accent: 12 6.5% 15.1%;
-  --accent-foreground: 60 9.1% 97.8%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 60 9.1% 97.8%;
-
-  --border: 12 6.5% 15.1%;
-  --input: 12 6.5% 15.1%;
-  --ring: 38 92% 50%;
+.light {
+  --background: 0 0% 100%;
+  --foreground: 224 71.4% 4.1%;
+  
+  --primary: 30 95% 45%;
+  --primary-foreground: 0 0% 100%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 224 71.4% 4.1%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71.4% 4.1%;
+  
+  --secondary: 220 14.3% 95.9%;
+  --secondary-foreground: 220.2 39.1% 14.9%;
+  
+  --muted: 220 14.3% 95.9%;
+  --muted-foreground: 220 8.9% 46.1%;
+  
+  --accent: 220 14.3% 95.9%;
+  --accent-foreground: 220.2 39.1% 14.9%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 20% 98.1%;
+  
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 30 95% 55%;
 }
 
 @layer base {
@@ -179,76 +160,175 @@
     @apply text-foreground;
     min-height: 100vh;
     position: relative;
+    background: hsl(var(--background));
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
+  /* Remove the old tricolour background — now handled by 3D canvas */
   body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image:
-      radial-gradient(circle at center, #000080 10px, transparent 11px),
-      radial-gradient(circle at center, transparent 56px, #000080 57px, #000080 60px, transparent 61px),
-      radial-gradient(circle at center, transparent 59px, #FFFFFF 60px),
-      repeating-conic-gradient(from 0deg at center, #000080 0deg 2deg, transparent 2deg 15deg),
-      radial-gradient(circle at center, rgba(0, 0, 128, 0.25) 0, transparent 150px),
-      linear-gradient(180deg, #FF9933 0%, #FFFFFF 35%, #FFFFFF 65%, #138808 100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:
-      100% 100%,
-      100% 100%,
-      122px 122px,
-      122px 122px,
-      100% 100%,
-      100% 100%;
-    filter: blur(30px);
-    transform: scale(1.2);
+    display: none;
+  }
+
+  /* Custom scrollbar for the dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(220 20% 8%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FF9933, #FFFFFF, #138808);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FF9933 20%, #FFFFFF 50%, #138808 80%);
   }
 }
 
+/* ═══════════════════════════════════════════════════
+   GLASSMORPHISM UTILITIES
+   ═══════════════════════════════════════════════════ */
+
 @layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 16px 48px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(255, 153, 51, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-navbar {
+    background: rgba(10, 12, 20, 0.7);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-input {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-input:focus {
+    border-color: rgba(255, 153, 51, 0.4);
+    box-shadow: 0 0 20px rgba(255, 153, 51, 0.1);
+  }
+
+  /* Tricolour gradient text */
+  .tricolour-text {
+    background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Tricolour glowing border */
+  .tricolour-border {
+    border-image: linear-gradient(135deg, #FF9933, #FFFFFF, #138808) 1;
+  }
+
+  /* Tricolour shimmer animation */
+  .tricolour-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 153, 51, 0) 0%,
+      rgba(255, 153, 51, 0.3) 15%,
+      rgba(255, 255, 255, 0.4) 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(19, 136, 8, 0.3) 70%,
+      rgba(19, 136, 8, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Glow pulse */
+  .glow-saffron {
+    box-shadow: 0 0 20px rgba(255, 153, 51, 0.2), 0 0 60px rgba(255, 153, 51, 0.1);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(19, 136, 8, 0.2), 0 0 60px rgba(19, 136, 8, 0.1);
+  }
+
+  /* 3D hover transforms */
+  .hover-3d {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+  }
+
+  .hover-3d:hover {
+    transform: translateY(-8px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  }
 
   /* Dramatic Entry Animation */
   @keyframes popIn {
     0% {
       opacity: 0;
       transform: translateY(50px) scale(0.9);
-      /* Start lower and smaller */
     }
-
     70% {
       transform: translateY(-10px) scale(1.02);
-      /* Overshoot slightly (bounce) */
     }
-
     100% {
       opacity: 1;
       transform: translateY(0) scale(1);
-      /* Settle */
     }
   }
 
-  /* Apply to all message bubbles */
   .message-bubble,
   .user-message,
   .ai-message {
     animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-    /* Bouncy effect */
     scroll-margin-top: 150px;
-    /* Reading Mode Buffer */
   }
 
   .typing-indicator {
-    background-color: #e0e0e0;
-    /* Distinct gray background */
+    background-color: rgba(255, 255, 255, 0.08);
     padding: 15px 20px;
-    /* Bigger bubble */
     border-radius: 20px;
     display: inline-block;
-    /* Ensure it takes space */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Add shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     min-width: 60px;
     margin-bottom: 10px;
     margin-left: 10px;
@@ -257,10 +337,8 @@
 
   .typing-indicator span {
     width: 12px;
-    /* BIGGER dots (was 8px) */
     height: 12px;
-    background-color: #000000;
-    /* PURE BLACK dots (was #888) */
+    background-color: #FF9933;
     display: inline-block;
     border-radius: 50%;
     margin: 0 3px;
@@ -273,18 +351,80 @@
 
   .typing-indicator span:nth-child(2) {
     animation-delay: -0.16s;
+    background-color: #FFFFFF;
+  }
+
+  .typing-indicator span:nth-child(3) {
+    background-color: #138808;
   }
 
   @keyframes bounce {
-
-    0%,
-    80%,
-    100% {
+    0%, 80%, 100% {
       transform: scale(0);
     }
-
     40% {
       transform: scale(1);
     }
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Subtle pulse glow */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 15px rgba(255, 153, 51, 0.1); }
+    50% { box-shadow: 0 0 30px rgba(255, 153, 51, 0.25); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     3D ROULETTE SECTION STYLES
+     ═══════════════════════════════════════════════════ */
+
+  .light-section {
+    color: #0f172a !important; /* Deep navy/black */
+    background: rgba(255, 255, 255, 0.8) !important; /* More opaque */
+    backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .light-section h1, 
+  .light-section h2, 
+  .light-section h3, 
+  .light-section h4,
+  .light-section p,
+  .light-section li,
+  .light-section div,
+  .light-section span:not(.tricolour-text) {
+    color: #1e293b !important;
+  }
+
+  /* Specific overrides for buttons and accents in light sections */
+  .light-section .glass {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .light-section .text-white\/50,
+  .light-section .text-white\/30,
+  .light-section .text-white\/70 {
+    color: rgba(30, 41, 59, 0.6) !important;
+  }
+
+  .dark-section {
+    color: white !important;
+    background: rgba(10, 12, 20, 0.4) !important;
+    backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 }
